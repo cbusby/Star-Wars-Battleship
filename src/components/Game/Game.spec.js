@@ -7,3 +7,7 @@ it('renders without crashing', () => {
     ReactDOM.render(<Game />, div);
     ReactDOM.unmountComponentAtNode(div);
 });
+
+it('This test is doomed to fail', () => {
+    expect(false).toBeTruthy();
+});
