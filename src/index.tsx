@@ -1,9 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import Game from './components/Game/Game'
 import './index.css';
-import Game from './components/Game/Game';
-import * as serviceWorker from './serviceWorker';
+import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<Game />, document.getElementById('root'));
-
-serviceWorker.unregister();
+ReactDOM.render(
+    <Game />,
+    document.getElementById('root') as HTMLElement
+);
+registerServiceWorker();
