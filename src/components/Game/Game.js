@@ -5,7 +5,8 @@ class Game extends React.Component {
     render() {
         return (
             <div>
-                Hello World
+                <p>Hello Galaxy!</p>
+                <p>Remember, the Force will be with you, always.</p>
             </div>
         );
     }
