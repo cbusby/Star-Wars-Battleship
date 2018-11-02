@@ -102,7 +102,7 @@
     ],
     "globals": {
       "ts-jest": {
-        "tsConfigFile": "/Users/michaelhall/dev/aluminum-falcon/Starish-Wars-Battleship/tsconfig.test.json"
+        "tsConfigFile": "./tsconfig.test.json"
       }
     }
   },
