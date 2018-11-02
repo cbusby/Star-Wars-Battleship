@@ -13,3 +13,4 @@ it('renders without crashing', () => {
 //
 //     expect(component.find(Square)).toHaveLength(100);
 // });
+
