@@ -24,7 +24,6 @@ if (
   argv.indexOf('--coverage') === -1 &&
   argv.indexOf('--watchAll') === -1
 ) {
-  argv.push('--watch');
 }
 
 
