@@ -2,6 +2,8 @@ import { shallow } from 'enzyme';
 import * as React from 'react';
 import Board from './Board';
 
-it('renders without crashing', () => {
-    expect(shallow(<Board />).contains(<div className="Board" />)).toBe(true);
+describe('Board', () => {
+    it('renders without crashing', () => {
+        expect(shallow(<Board />).contains(<div className="Board" />)).toBe(true);
+    });
 });
