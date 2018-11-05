@@ -1,5 +1,6 @@
 import * as React from 'react';
 import logo from './aluminum-falcon.png'
+import Board from "../Board/Board";
 import './Game.css';
 
 class Game extends React.Component {
@@ -10,6 +11,7 @@ class Game extends React.Component {
                     <img src={logo} className="Game-logo" alt="logo" />
                     <h1 className="Game-title">What a piece of junk!</h1>
                 </header>
+                <Board />
             </div>
         );
     }
