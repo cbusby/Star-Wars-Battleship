@@ -1,5 +1,6 @@
 .Game {
     text-align: center;
+    margin: auto;
 }
 
 .Game-logo {
@@ -20,6 +21,11 @@
 
 .Game-intro {
     font-size: large;
+}
+
+.Board {
+    width: 500px;
+    margin: 10% auto;
 }
 
 @keyframes Game-logo-spin {
