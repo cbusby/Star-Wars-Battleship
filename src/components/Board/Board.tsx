@@ -23,7 +23,7 @@ class Board extends React.Component {
             <div className="Grid">
                 {
                     this.generateIndices().map((row) => (
-                        <div className="BoardRow" id={row[0].toString()}>
+                        <div className="BoardRow" id={row[0].toString()} key={"r"+row[0].toString()}>
                             {row.map(index => this.renderSquare(index))}
                         </div>
                     ))
@@ -33,7 +33,7 @@ class Board extends React.Component {
     }
 
     public renderSquare(index: number) {
-        return <Square value={index.toString()}/>;
+        return <Square key={index.toString()} value={index.toString()}/>;
     }
 
     public render() {

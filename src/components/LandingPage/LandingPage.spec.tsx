@@ -1,15 +1,15 @@
 import { shallow } from 'enzyme';
 import * as React from 'react';
-import Board from "../Board/Board";
+import LandingPage from "./LandingPage";
 
-describe('Board', () => {
+describe('LandingPage', () => {
     let component: import("../../../node_modules/@types/enzyme/index").ShallowWrapper<any, Readonly<{}>, React.Component<{}, {}, any>>;
 
     beforeEach(() => {
-        component = shallow(<Board />);
+        component = shallow(<LandingPage />);
     });
 
-    it('', () => {
-        expect(component.find('.BoardRow')).toHaveLength(10);
+    it('renders a create game button', () => {
+        expect(component.find('.CreateGameButton')).toHaveLength(1);
     });
 });

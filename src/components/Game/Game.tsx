@@ -13,9 +13,9 @@ class Game extends React.Component {
         let body;
 
         if(this.state.hasGameId) {
-            body = <LandingPage />;
-        } else {
             body = <Board />;
+        } else {
+            body = <LandingPage />;
         }
         return (
             <div className="Game">
