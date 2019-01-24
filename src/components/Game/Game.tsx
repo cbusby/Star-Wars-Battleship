@@ -7,7 +7,7 @@ import LandingPage from "../LandingPage/LandingPage";
 const initialState = { hasGameId: false };
 type State = Readonly<typeof initialState>
 class Game extends React.Component {
-    readonly state: State = initialState;
+    public readonly state: State = initialState;
 
     public render() {
         let body;
