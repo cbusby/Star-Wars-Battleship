@@ -3,7 +3,8 @@ import Square from "../Square/Square";
 import './Board.css';
 
 class Board extends React.Component {
-    public generateIndecies() {
+
+    public generateIndices() {
         const rows = [];
         let counter = 0;
         for (let i = 0; i < 10; i++) {
@@ -21,9 +22,9 @@ class Board extends React.Component {
         return (
             <div className="Grid">
                 {
-                    this.generateIndecies().map((row, index) => (
-                        <div className="BoardRow" key={row[0]}>
-                            {row.map(cellId => this.renderSquare(cellId))}
+                    this.generateIndices().map((row) => (
+                        <div className="BoardRow" id={row[0].toString()}>
+                            {row.map(index => this.renderSquare(index))}
                         </div>
                     ))
                 }
@@ -32,7 +33,7 @@ class Board extends React.Component {
     }
 
     public renderSquare(index: number) {
-        return <Square key={index}/>;
+        return <Square value={index.toString()}/>;
     }
 
     public render() {
