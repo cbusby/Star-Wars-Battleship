@@ -1,19 +1,22 @@
-import {shallow} from 'enzyme';
+import {shallow, ShallowWrapper} from 'enzyme';
 import * as React from 'react';
 import LandingPage from "./LandingPage";
 import CreateGameService from './CreateGameService';
-
+import StarishWarsState from '../StarishWarsState';
+import ILandingPage from './LandingPageInterface';
 
 
 describe('LandingPage', () => {
-    let component: import("../../../node_modules/@types/enzyme/index").ShallowWrapper<any, Readonly<{}>, React.Component<{}, {}, any>>;
+    //let component: import("../../../node_modules/@types/enzyme/index").ShallowWrapper<any, Readonly<{}>, React.Component<{}, {}, any>>;
+    let component: ShallowWrapper<ILandingPage, StarishWarsState>;
     let fakeCreateGameService: CreateGameService
+    let myState : StarishWarsState
 
     beforeEach(() => {
         fakeCreateGameService = new CreateGameService(); 
-        fakeCreateGameService.createGame = jest.fn().mockReturnValue("");
-
-        component = shallow(<LandingPage createGameService={fakeCreateGameService}/>);
+        fakeCreateGameService.createGame = jest.fn().mockReturnValue(1);
+        myState = {gameId:1}
+        component = shallow(<LandingPage createGameService={fakeCreateGameService} mystate={myState} />);
     });
 
     it('renders a create game button', () => {
@@ -26,6 +29,11 @@ describe('LandingPage', () => {
         component.find('button').simulate('click');
         expect(fakeCreateGameService.createGame).toHaveBeenCalled()
     });
+    // it("has a game id in state store after button is clicked", () => {
+    //     component.find('button').simulate('click');
+    //     expect(component.state()).toBeGreaterThan(0);
+        
+    // });
 
 
 

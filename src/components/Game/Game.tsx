@@ -4,19 +4,21 @@ import Board from "../Board/Board";
 import './Game.css';
 import LandingPage from "../LandingPage/LandingPage";
 import CreateGameService from "../LandingPage/CreateGameService";
+import StarishWarsState from '../StarishWarsState';
 
-const initialState = { hasGameId: false };
-type State = Readonly<typeof initialState>
-class Game extends React.Component {
-    public readonly state: State = initialState;
+class Game extends React.Component<{}, StarishWarsState> {
+    constructor(props: {}) {
+        super(props);
+        this.state = { gameId: -1 };
+    }
 
     public render() {
         let body;
 
-        if(this.state.hasGameId) {
+        if(this.state.gameId > 0) {
             body = <Board />;
         } else {
-            body = <LandingPage createGameService = {new CreateGameService()} />;
+            body = <LandingPage createGameService = {new CreateGameService()} mystate={this.state} />;
         }
         return (
             <div className="Game">
