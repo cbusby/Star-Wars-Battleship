@@ -3,6 +3,7 @@ import logo from './aluminum-falcon.png'
 import Board from "../Board/Board";
 import './Game.css';
 import LandingPage from "../LandingPage/LandingPage";
+import CreateGameService from "../LandingPage/CreateGameService";
 
 const initialState = { hasGameId: false };
 type State = Readonly<typeof initialState>
@@ -15,7 +16,7 @@ class Game extends React.Component {
         if(this.state.hasGameId) {
             body = <Board />;
         } else {
-            body = <LandingPage />;
+            body = <LandingPage createGameService = {new CreateGameService()} />;
         }
         return (
             <div className="Game">
