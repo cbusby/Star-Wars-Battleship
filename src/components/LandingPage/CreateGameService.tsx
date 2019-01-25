@@ -1,9 +1,9 @@
 
-class CreateGameService
+class CreateGameService 
 {
 
-    public createGame() {
-
+    public createGame(): string {
+        return "";
     }
 }
 
