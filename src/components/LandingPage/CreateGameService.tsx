@@ -1,9 +1,8 @@
 
 class CreateGameService 
 {
-
-    public createGame(): string {
-        return "";
+    public createGame(): number {
+        return -1;
     }
 }
 
