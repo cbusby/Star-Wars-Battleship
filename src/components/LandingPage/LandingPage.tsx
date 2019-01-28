@@ -11,14 +11,14 @@ class LandingPage extends React.Component<ILandingPage, StarishWarsState> {
         super(props);
         this.createGameService = props.createGameService || new CreateGameService();
         this.state = props.mystate || { gameId: -1};
-        this.createGame = this.createGame.bind(this)
     }
 
-    public createGame()
+    public createGame = () =>
     {
-        const newGameId = this.props.createGameService.createGame();
+        const newGameId = this.createGameService.createGame();
         this.setState({ gameId: newGameId});
     }
+
     public render() {
 
         return (
