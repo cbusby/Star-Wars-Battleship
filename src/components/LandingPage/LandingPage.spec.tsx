@@ -29,11 +29,10 @@ describe('LandingPage', () => {
         component.find('button').simulate('click');
         expect(fakeCreateGameService.createGame).toHaveBeenCalled()
     });
-    // it("has a game id in state store after button is clicked", () => {
-    //     component.find('button').simulate('click');
-    //     expect(component.state()).toBeGreaterThan(0);
-        
-    // });
+    it("has a game id in state store after button is clicked", () => {
+        component.find('button').simulate('click');
+        expect(component.state().gameId).toBeGreaterThan(0);
+    });
 
 
 
