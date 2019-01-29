@@ -2,9 +2,11 @@
   "rules": {
     "ordered-imports": false,
     "no-console": false,
-    "comment-format": false
+    "comment-format": false,
+    "object-literal-sort-keys" : false
   },
   "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
+  "defaulSeverity" : "warning",
   "linterOptions": {
     "exclude": [
       "config/**/*.js",
