@@ -6,6 +6,7 @@ class CreateGameService
     public createGame(gameCreated:any) {
         let gameId = -1
         
+
         this.postIt("https://oazcld7fii.execute-api.us-east-2.amazonaws.com/prod/swb")
             .then(res=>{
                 gameId=res.headers.location;
@@ -17,7 +18,7 @@ class CreateGameService
     private async postIt(url:string)
     {
         const request = await axios.post(url);
-        return request.headers.location
+        return request
     }
 }
 
