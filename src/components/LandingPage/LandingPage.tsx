@@ -3,6 +3,8 @@ import './LandingPage.css';
 import ILandingPage from './LandingPageInterface';
 import StarishWarsState from '../StarishWarsState';
 import CreateGameService from './CreateGameService';
+//import { render } from 'enzyme';
+//import { debug } from 'util';
 
 class LandingPage extends React.Component<ILandingPage, StarishWarsState> {
     public createGameService: CreateGameService;
@@ -15,14 +17,21 @@ class LandingPage extends React.Component<ILandingPage, StarishWarsState> {
 
     public createGame = () =>
     {
-        const newGameId = this.createGameService.createGame();
-        this.setState({ gameId: newGameId});
+        this.createGameService.createGame(this.gameCreated);
     }
 
+    public gameCreated = (myGameId: number) =>
+    {
+        this.setState({gameId: myGameId})
+        this.render();
+    }
+ 
     public render() {
-
         return (
-            <button className="CreateGameButton" onClick={this.createGame}>Start Game</button>
+            <div>
+                <button className="CreateGameButton" onClick={this.createGame}>Start Game</button>
+                <div>Game Id: '{this.state.gameId}'</div>
+            </div>
         );
     }
 }
