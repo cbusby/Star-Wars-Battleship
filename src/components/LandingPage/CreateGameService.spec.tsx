@@ -12,6 +12,8 @@ describe('CreateGameService', () => {
     });
 
     it('When createGame is called, axios should initiate a post to create game', done => {
+        expect.assertions(2);
+        
         axios.post = jest.fn().mockImplementationOnce(async (url:string)=> 
             {   
             return Promise.resolve({ 
@@ -21,16 +23,15 @@ describe('CreateGameService', () => {
             })
         });
         const mockCallback = jest.fn()
-        .mockImplementationOnce((data: any) => {
-            expect(data).toBe(12);
-            done()
+            .mockImplementationOnce((data: any) => {
+                expect(data).toBe(12);
+                expect(axios.post).toHaveBeenCalledWith("https://oazcld7fii.execute-api.us-east-2.amazonaws.com/prod/swb");
+                done();
         });
-
+        
         setTimeout(()=>
         {
             fakeCreateGameService.createGame(mockCallback);
-            expect(axios.post).toHaveBeenCalledWith("https://oazcld7fii.execute-api.us-east-2.amazonaws.com/prod/swb");
-            expect(mockCallback).toBeCalledTimes(1);
         })
     });
 });
