@@ -1,3 +1,3 @@
 export default interface IStarishWarsState {
-    gameId: number;
+    gameId: string;
 }

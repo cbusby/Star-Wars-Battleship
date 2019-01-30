@@ -6,16 +6,18 @@ import LandingPage from "../LandingPage/LandingPage";
 import CreateGameService from "../LandingPage/CreateGameService";
 import StarishWarsState from '../StarishWarsState';
 
-class Game extends React.Component<{}, StarishWarsState> {
-    constructor(props: {}) {
+class Game extends React.Component<{ gameId: string}, StarishWarsState> {
+    constructor(props: {gameId: string}) {
         super(props);
-        this.state = { gameId: -1 };
+        const gameId = props.gameId || "";
+        const newState = { gameId }
+        this.state = newState;
     }
 
     public render() {
         let body;
 
-        if(this.state.gameId > 0) {
+        if(this.state.gameId) {
             body = <Board />;
         } else {
             body = <LandingPage createGameService = {new CreateGameService()} mystate={this.state} />;
