@@ -7,7 +7,6 @@ import ILandingPage from './LandingPageInterface';
 
 
 describe('LandingPage', () => {
-    //let component: import("../../../node_modules/@types/enzyme/index").ShallowWrapper<any, Readonly<{}>, React.Component<{}, {}, any>>;
     let component: ShallowWrapper<ILandingPage, StarishWarsState>;
     let fakeCreateGameService: CreateGameService
     let myState : StarishWarsState
@@ -34,7 +33,4 @@ describe('LandingPage', () => {
         expect(component.state().gameId).not.toBe(undefined);
         expect(component.state().gameId).not.toBe('');
     });
-
-
-
 });
