@@ -15,7 +15,7 @@ describe('LandingPage', () => {
     beforeEach(() => {
         fakeCreateGameService = new CreateGameService(); 
         fakeCreateGameService.createGame = jest.fn().mockReturnValue(1);
-        myState = {gameId:1}
+        myState = {gameId: "1n2k2n4"}
         component = shallow(<LandingPage createGameService={fakeCreateGameService} mystate={myState} />);
     });
 
@@ -31,7 +31,8 @@ describe('LandingPage', () => {
     });
     it("has a game id in state store after button is clicked", () => {
         component.find('button').simulate('click');
-        expect(component.state().gameId).toBeGreaterThan(0);
+        expect(component.state().gameId).not.toBe(undefined);
+        expect(component.state().gameId).not.toBe('');
     });
 
 
