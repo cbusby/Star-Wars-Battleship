@@ -1,10 +1,12 @@
 import axios from 'axios';
+import Config from '../../Config';
+
 class CreateGameService 
 {
     public createGame(gameCreated:any) {
         let gameId = ""
 
-        axios.post("https://oazcld7fii.execute-api.us-east-2.amazonaws.com/prod/swb")
+        axios.post(Config.baseApiUrl)
             .then(res=>{
                 gameId=res.headers.location;
                 gameCreated(gameId)
