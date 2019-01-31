@@ -19,7 +19,6 @@ class LandingPage extends React.Component<ILandingPage, StarishWarsState> {
 
     public gameCreated = (myGameId: string) => {
         this.setState({gameId: myGameId})
-        this.render();
     }
  
     public render() {
