@@ -1,14 +1,15 @@
 
 import CreateGameService from './CreateGameService';
 import axios from 'axios';
+import Config from '../../Config';
 
 jest.mock('axios')
 
 describe('CreateGameService', () => {
-    let fakeCreateGameService: CreateGameService
+    let createGameService: CreateGameService
 
     beforeEach(() => {
-        fakeCreateGameService = new CreateGameService(); 
+        createGameService = new CreateGameService(); 
     });
 
     it('When createGame is called, axios should initiate a post to create game', done => {
@@ -25,13 +26,13 @@ describe('CreateGameService', () => {
         const mockCallback = jest.fn()
             .mockImplementationOnce((data: any) => {
                 expect(data).toBe(12);
-                expect(axios.post).toHaveBeenCalledWith("https://oazcld7fii.execute-api.us-east-2.amazonaws.com/prod/swb");
+                expect(axios.post).toHaveBeenCalledWith(Config.baseApiUrl);
                 done();
         });
         
         setTimeout(()=>
         {
-            fakeCreateGameService.createGame(mockCallback);
+            createGameService.createGame(mockCallback);
         })
     });
 });
